@@ -40,7 +40,7 @@ module.exports = NodeHelper.create({
       ) {
         Log.log(`[MMM-OneCallWeather] ${moment().format("D-MMM-YY HH:mm")} ** ERROR ** Latitude and/or longitude not provided.`);
       } else {
-        const myurl =
+        var myurl =
           `https://api.openweathermap.org/data/${config.apiVersion}/onecall` +
           `?lat=${config.latitude}&lon=${config.longitude}${
             config.units === ""
@@ -49,6 +49,8 @@ module.exports = NodeHelper.create({
           }&exclude=${config.exclude}&appid=${config.apikey}&lang=${
             config.language
           }`;
+        
+        myurl = `http://api.weatherapi.com/v1/forecast.json?key=f9cf093389c941ef9bc12200240501&q=Eastwood, NSW&days=5&aqi=no&alerts=no`;
 
         // make request to OpenWeather onecall API
 
