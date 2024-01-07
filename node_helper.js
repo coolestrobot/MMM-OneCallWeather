@@ -49,8 +49,7 @@ module.exports = NodeHelper.create({
           }&exclude=${config.exclude}&appid=${config.apikey}&lang=${
             config.language
           }`;
-        
-        myurl = `http://api.weatherapi.com/v1/forecast.json?key=f9cf093389c941ef9bc12200240501&q=Eastwood, NSW&days=5&aqi=no&alerts=no`;
+        myurl = `http://api.weatherapi.com/v1/forecast.json?key=${config.apikey}&q=${config.weatherApiQueryString}&days=${config.weatherApiMaxDays}&aqi=no&alerts=no`;
 
         // make request to OpenWeather onecall API
 
